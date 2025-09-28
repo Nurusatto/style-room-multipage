@@ -1,0 +1,12 @@
+.button {
+  padding: 18px 24px;
+  border-radius: var(--border-raduis-alt);
+  background-color: var(--color-dark-06);
+  border: var(--border);
+
+  &.is-active {
+    border: none;
+    background-color: var(--color-brown-70);
+    padding: 18px 30px;
+  }
+}

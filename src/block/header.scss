@@ -1,0 +1,208 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+
+  @include laptop {
+    margin-bottom: 40px;
+  }
+
+  @include tablet {
+    .header__side--left,
+    .header__side--right {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 30px;
+  }
+
+  &__side {
+    flex: 0 0 75px;
+    display: flex;
+    align-items: flex-end;
+    height: 60px;
+    position: relative;
+    transform: translateY(15px);
+
+    @media (min-width: 1920px) {
+      flex: 0 0 15%;
+    }
+
+    &--left {
+      &::before {
+        content: "";
+        position: absolute;
+        right: 5px;
+        top: 15px;
+        height: 26px;
+        width: 1px;
+
+        background-image: repeating-linear-gradient(
+          to bottom,
+          #404040 0 6px,
+          transparent 6px 8px
+        );
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 20px;
+        height: 1px;
+        width: 26px;
+
+        background-image: repeating-linear-gradient(
+          to right,
+          #404040 0 6px,
+          // штрих 6px
+          transparent 6px 8px // пробел 2px
+        );
+      }
+    }
+
+    &--right {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 15px;
+        height: 26px;
+        width: 1px;
+
+        background-image: repeating-linear-gradient(
+          to bottom,
+          #404040 0 6px,
+          transparent 6px 8px
+        );
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        height: 1px;
+        width: 26px;
+
+        background-image: repeating-linear-gradient(
+          to right,
+          #404040 0 6px,
+          // штрих 6px
+          transparent 6px 8px // пробел 2px
+        );
+      }
+    }
+  }
+
+  &__inner {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding-block: 30px;
+    align-items: center;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: repeating-linear-gradient(
+        to right,
+        #404040 0 6px,
+        transparent 6px 8px
+      );
+      height: 1px;
+      width: 98%;
+      left: 1%;
+      right: 1%;
+      bottom: 19px;
+    }
+  }
+
+  &__burger {
+    @include mobile-above {
+      display: none;
+    }
+
+    @include mobile {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 3rem;
+      padding: 1rem;
+      z-index: 3;
+      background-color: var(--color-dark-06);
+      transition-duration: var(--transition-duration);
+
+      &:not(.is-active) {
+        @include hide;
+
+        translate: 100%;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-link {
+      color: var(--color-grey-70);
+
+      &--active {
+        padding: 18px 30px;
+        background-color: var(--color-dark-10);
+        border: none;
+        color: var(--color-light);
+
+        @include mobile {
+        }
+      }
+    }
+
+    &--burger-menu {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 10px;
+    }
+  }
+
+  &__menu {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__action {
+    &-cart {
+      @include square(60px);
+
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--border-raduis-alt);
+      background-color: var(--color-dark-06);
+      border: var(--border);
+
+      > svg {
+        @include square(24px);
+      }
+    }
+    &-contact {
+      background-color: var(--color-brown-60);
+      color: var(--color-dark-06);
+      border: none;
+    }
+  }
+}

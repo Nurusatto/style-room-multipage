@@ -1,0 +1,52 @@
+@use "./helpers/index.scss" as *;
+
+:root {
+  --color-light: #fff;
+  --color-dark: #000;
+
+  --color-accent: #{var(--color-brown-70)};
+
+  --color-brown-60: #ae9b84;
+  --color-brown-65: #b8a893;
+  --color-brown-70: #c2b4a3;
+  --color-brown-80: #d6cdc2;
+  --color-brown-90: #ebe6e0;
+  --color-brown-95: #f5f3f0;
+  --color-brown-97: #f9f8f6;
+  --color-brown-99: #fdfdfc;
+
+  --color-dark-06: #0f0f0f;
+  --color-dark-10: #1a1a1a;
+  --color-dark-12: #1f1f1f;
+  --color-dark-15: #262626;
+  --color-dark-20: #333333;
+  --color-dark-25: #404040;
+  --color-dark-30: #4d4d4d;
+  --color-dark-35: #595959;
+
+  --color-grey-40: #676665;
+  --color-grey-50: #81807e;
+  --color-grey-70: #b3b3b2;
+  --color-grey-80: #cccccc;
+  --color-grey-90: #e6e6e6;
+  --color-grey-95: #f2f2f2;
+  --color-grey-97: #f7f7f7;
+  --color-grey-99: #fcfcfc;
+
+  --font-family-base: "Roboto", sans-serif;
+  --font-family-slt: "Roboto Mono", sans-serif;
+
+  --border: 2px dashed var(--color-dark-15);
+  --border-radius-base: 20px;
+  --border-raduis-alt: 12px;
+  --border-radius-alt-2: 10px;
+
+  --container-width: 1600px;
+  --container-padding-x: 16px;
+
+  --transition-duration: 0.2s;
+
+  @include laptop {
+    --container-width: 1200px;
+  }
+}

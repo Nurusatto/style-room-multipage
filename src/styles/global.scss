@@ -1,0 +1,22 @@
+@use "./helpers/index.scss" as *;
+
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+body {
+  @include fluid-text(18, 14);
+
+  background-color: var(--color-dark-06);
+  color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-base);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
