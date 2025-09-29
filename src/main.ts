@@ -6,6 +6,7 @@ import "@/shared";
 import "@/block/header.scss";
 import "@/block/burger-Button.scss";
 import "@/block/hero.scss";
+import "@/block/craft.scss";
 
 //scripts
 import Header from "./scripts/Header";
