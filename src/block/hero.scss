@@ -1,0 +1,147 @@
+.hero {
+  &__inner {
+    max-width: 100%;
+  }
+
+  &__head {
+    position: relative;
+    &-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-top-left-radius: var(--border-radius-base);
+      border-top-right-radius: var(--border-radius-base);
+    }
+    &-button {
+      max-width: 128px;
+      height: 49px;
+      font-size: 14px;
+      padding: 14px 18px; //18 20 12 14
+      border-radius: var(--border-radius-alt-3);
+      align-items: center;
+      gap: 5px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 95%;
+
+      @include tablet {
+        padding: 12px 14px;
+      }
+
+      @media (max-width: 1000px) {
+        padding: 6px;
+      }
+
+      @media (max-width: 880px) {
+        padding: 18px;
+        font-size: 0;
+        justify-content: center;
+        gap: 0;
+      }
+
+      @media (max-width: 500px) {
+        padding: 8px;
+        padding-inline: 10px;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    border: var(--border);
+    border-bottom-left-radius: var(--border-radius-base);
+    border-bottom-right-radius: var(--border-radius-base);
+    border-top: none;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__badge {
+    color: var(--color-grey-70);
+    padding-top: 14px;
+    padding-bottom: 14px;
+
+    @include tablet {
+      padding: 12px 20px;
+    }
+
+    &-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__description {
+    flex: 0 0 50%;
+    padding: 40px;
+    padding-top: 40px;
+
+    > h1 {
+      text-transform: uppercase;
+    }
+
+    > p {
+      color: var(--color-grey-70);
+    }
+
+    @include tablet {
+      padding: 10px;
+      padding-top: 70px;
+    }
+  }
+
+  &__metrics {
+    flex: 0 0 50%;
+  }
+
+  &__list {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    width: 100%;
+    &-key {
+      padding-left: 5px;
+      > h2 {
+        margin: 0;
+      }
+    }
+
+    &-value {
+      padding-left: 5px;
+      color: var(--color-grey-50);
+    }
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+      min-height: 160px;
+      border-left: var(--border);
+      border-top: var(--border);
+      width: 100%;
+
+      &:nth-child(2) {
+        border-top: none;
+      }
+      &:nth-child(1) {
+        border-top: none;
+        @include tablet {
+          border-left: none;
+        }
+      }
+      &:nth-child(3) {
+        @include tablet {
+          border-left: none;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 @use "./helpers/index.scss" as *;
 
 html {
+  overflow-x: hidden;
   &.is-lock {
     overflow: hidden;
   }
