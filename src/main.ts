@@ -7,6 +7,8 @@ import "@/block/header.scss";
 import "@/block/burger-Button.scss";
 import "@/block/hero.scss";
 import "@/block/craft.scss";
+import "@/block/navigating.scss";
+import "@/block/style.scss";
 
 //scripts
 import Header from "./scripts/Header";

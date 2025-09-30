@@ -9,6 +9,10 @@
       color: var(--color-grey-40);
     }
 
+    > h1 {
+      text-transform: uppercase;
+    }
+
     @include laptop {
       padding: 60px 0 60px 60px;
     }

@@ -1,0 +1,73 @@
+.navigating {
+  &__head {
+    padding: 60px 0 60px 60px;
+    position: relative;
+    overflow: hidden;
+
+    > p {
+      color: var(--color-grey-40);
+    }
+
+    &-icon {
+      position: absolute;
+      top: -105px;
+      right: -162px;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      padding: 30px 20px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    padding: 40px;
+    border-top: var(--border);
+    border-left: var(--border);
+
+    &:first-child {
+      border-left: none;
+    }
+
+    > h4 {
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    > p {
+      color: var(--color-grey-50);
+    }
+    > span {
+      color: var(--color-grey-40);
+      font-family: var(--font-family-alt);
+    }
+
+    @include tablet {
+      &:nth-child(3) {
+        border-left: none;
+      }
+    }
+
+    @include mobile {
+      &:nth-child(2),
+      &:nth-child(4) {
+        border-left: none;
+      }
+    }
+  }
+}
