@@ -17,6 +17,23 @@ body {
   font-family: var(--font-family-base);
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-bottom: 100px;
+
+  @include tablet {
+    gap: 80px;
+    margin-bottom: 80px;
+  }
+
+  @include mobile {
+    gap: 50px;
+    margin-bottom: 50px;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;

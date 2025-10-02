@@ -1,0 +1,67 @@
+.wardrobe {
+  &__inner {
+    border-radius: var(--border-radius-base);
+    background-color: var(--color-brown-70);
+    position: relative;
+    padding: 80px 120px 80px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    gap: 10px;
+
+    @include tablet {
+      padding: 30px 20px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &__info {
+    max-width: 750px;
+    z-index: 2;
+    color: var(--color-dark-06);
+    display: flex;
+    flex-direction: column;
+
+    > h1 {
+      text-transform: uppercase;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-dark-12);
+    padding: 14px 20px;
+    border: none;
+    max-height: 50px;
+    border-radius: var(--border-radius-alt-3);
+    color: var(--color-light);
+    z-index: 2;
+    justify-content: center;
+    width: 135px;
+    text-wrap: nowrap;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    @include square(524px);
+
+    position: absolute;
+    right: 0;
+    top: -65%;
+
+    @include tablet {
+      @include square(305px);
+
+      top: -70%;
+    }
+  }
+}
